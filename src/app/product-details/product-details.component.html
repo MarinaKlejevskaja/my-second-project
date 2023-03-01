@@ -1,0 +1,14 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product; else elseBlock">
+    <h3>{{ product.name }}</h3>
+    <h4>{{ product.price | currency:'EUR'  }}</h4>
+    <p>{{ product.description }}</p>
+    <button type="button" (click)="addToCart(product)">Buy</button>
+</div>
+
+
+<ng-template #elseBlock>
+    Content to render when condition is false.
+</ng-template>
+
